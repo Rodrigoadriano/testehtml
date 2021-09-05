@@ -1,13 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="PT-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Documento</title>
+    <title>Curso Javascript</title>
+    <script src="./introCodigo.js"></script>
+    <style>
+        #res{
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+        }
+        h1{
+            color: darkblue;
+        }
+        p{
+            color: cornsilk;
+            font-size: large;
+            font-style: oblique;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+        body{
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: rgb(75, 76, 128);
+            }
+
+        h2{
+            color: crimson;
+        }
+        #post {
+            color: blueviolet;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #img {
+            
+            
+            height: 300px;
+            display:inline-block
+        }
+
+        #bt, #bt2{
+            font-size: 16px;
+             padding: 10px 16px;
+            margin-bottom: 32px;
+             background-color: rgb(74, 144, 226);
+             color: rgb(255, 255, 255);
+             border: 0;
+            cursor: pointer;
+          
+        }
+        #rod{
+            font: normal 20pt Arial;
+            background-color: blueviolet;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 20px;
+
+
+        }
+
+    </style>
+    
 </head>
+
 <body>
-    <h1>Titulo 1</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero exercitationem architecto aliquid quis labore sapiente incidunt sequi quaerat doloribus optio? Rem natus, ea optio deleniti reprehenderit tempore pariatur tenetur aut.</p>
+
+    <button id="bt"> Click Aqui  ! </button>
+    <button id="bt2"> Click Aqui bt2 ! </button>
+    <h1 id='post'>Titulo</h1>
+    
+
+    <h2> Olá mundo</h2>
+    <h2> Somando valores!</h2>
+
+    <input type="number" name="n1" id="n1">
+    + 
+    <input type="number" name="n2" id="n2">
+
+    <input type="button" value="somar" onclick="somar()"
+    >
+    <div id="res"> Resultado </div>
+
+    <p>Paragarasdasd ,, asud hasudh asd as asudh asuhdaisfafi</p>
+    <h2>Olá marte</h2>
+    <p>Olá marte vermelha</p>
+    <div id="rod" onclick="mudar()" onmouseover="cima()" onmouseleave="saiu()" >
+        
+        Olá! 
+
+    </div> 
+
+   
+   
+   
+   <script>
+
+       function somar(){
+        let n1 = Number( document.getElementById("n1").value)
+        let n2 = Number( document.getElementById("n2").value)
+        
+        let res = document.getElementById("res")
+
+        res.innerHTML = `A soma de  ${n1} + ${n2} é: <strong>${n1 + n2}</strong>`
+
+
+       }
+
+
+
+        function saiu(){
+            let a = document.getElementById("rod")
+            a.innerText = "saiu!"
+        }
+        function cima(){
+            let a = document.getElementById("rod")
+            a.innerText = "cima!"
+        }
+        function mudar(){
+            let a = document.getElementById("rod")
+            a.innerText = "Clicou!"
+
+            
+
+        }
+        document.getElementById('post').textContent = 'Rodrigo Adriano'
+        let bt = document.getElementById('bt');
+
+
+        bt.addEventListener('click', () => {
+            let big = document.getElementById('post')
+            big.textContent = "Maneiro!"
+            document.getElementById('img').src = pic2
+            
+        })
+
+
+
+
+        let pic1 = './supoermax.PNG'
+        let pic2 = './small_04.jpg'
+        let imagem = document.getElementById('img')
+        let novobt = document.getElementById('bt2')
+
+        novobt.addEventListener('click', () =>{
+            
+            novobt.textContent = "Clicou"
+            let ind  = document.createElement('img')
+            ind.src = './small_04.jpg'
+            document.body.appendChild(ind)
+
+        })
+
+    </script>
 </body>
+
 </html>
